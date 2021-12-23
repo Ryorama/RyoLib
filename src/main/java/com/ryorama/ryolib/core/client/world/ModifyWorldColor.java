@@ -6,6 +6,11 @@ public class ModifyWorldColor {
 
     public static ColorSettings lastColorSettings = new ColorSettings("", 0, "", 0);
 
+    public static String defaultSkyLightHexColor = "";
+    public static int defaultSkyLightBlendStrength = 0;
+    public static String defaultMoonTextureHexColor = "";
+    public static int defaultMoonTextureBlendStrength = 0;
+
     public static String skyLightHexColor = "";
     public static int skyLightBlendStrength = 0;
     public static String moonTextureHexColor = "";
@@ -16,5 +21,12 @@ public class ModifyWorldColor {
         skyLightBlendStrength = skyLightBlendStrength2;
         moonTextureHexColor = moonTextureHexColor2;
         moonTextureBlendStrength = moonTextureBlendStrength2;
+    }
+
+    public static void resetToDefaultColor() {
+        skyLightHexColor = defaultSkyLightHexColor;
+        skyLightBlendStrength = defaultSkyLightBlendStrength;
+        moonTextureHexColor = defaultSkyLightHexColor;
+        moonTextureBlendStrength = defaultMoonTextureBlendStrength;
     }
 }
