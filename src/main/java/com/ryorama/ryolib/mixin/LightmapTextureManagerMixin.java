@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public abstract class LightmapTextureManagerMixin {
 
     @Inject(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3f;lerp(Lnet/minecraft/util/math/Vec3f;F)V", ordinal = 0), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
-    public void update(float delta, CallbackInfo ci, ClientWorld clientworld, float f, float f1, float f3, Vec3f skyVector) {
+    public void update(float delta, CallbackInfo ci, ClientWorld clientworld, float f, float f1, float f2, float f4, Vec3f skyVector) {
 
         ColorSettings colorSettings = new ColorSettings(ModifyWorldColor.skyLightHexColor, ModifyWorldColor.skyLightBlendStrength, ModifyWorldColor.moonTextureHexColor, ModifyWorldColor.moonTextureBlendStrength);
         ModifyWorldColor.lastColorSettings = new ColorSettings("", 0, "", 0);

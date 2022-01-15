@@ -1,7 +1,10 @@
 package com.ryorama.ryolib.core.client.world;
 
 import com.ryorama.ryolib.utils.graphics.ColorSettings;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 
+@Environment(EnvType.CLIENT)
 public class ModifyWorldColor {
 
     public static ColorSettings lastColorSettings = new ColorSettings("", 0, "", 0);
@@ -26,7 +29,23 @@ public class ModifyWorldColor {
     public static void resetToDefaultColor() {
         skyLightHexColor = defaultSkyLightHexColor;
         skyLightBlendStrength = defaultSkyLightBlendStrength;
-        moonTextureHexColor = defaultSkyLightHexColor;
+        moonTextureHexColor = defaultMoonTextureHexColor;
         moonTextureBlendStrength = defaultMoonTextureBlendStrength;
+    }
+
+    public static int tryParseColor(String input) {
+        int result = Integer.MAX_VALUE;
+
+        if (input.isEmpty()) {
+            return result;
+        }
+
+        try {
+            result = (int) Long.parseLong(input.replace("#", "").replace("0x", ""), 16);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }
