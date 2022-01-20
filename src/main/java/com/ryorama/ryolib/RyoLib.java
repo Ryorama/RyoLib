@@ -8,6 +8,6 @@ public class RyoLib implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
-		
+
 	}
 }
