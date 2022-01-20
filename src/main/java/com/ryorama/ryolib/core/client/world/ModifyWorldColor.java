@@ -29,7 +29,23 @@ public class ModifyWorldColor {
     public static void resetToDefaultColor() {
         skyLightHexColor = defaultSkyLightHexColor;
         skyLightBlendStrength = defaultSkyLightBlendStrength;
-        moonTextureHexColor = defaultSkyLightHexColor;
+        moonTextureHexColor = defaultMoonTextureHexColor;
         moonTextureBlendStrength = defaultMoonTextureBlendStrength;
+    }
+
+    public static int tryParseColor(String input) {
+        int result = Integer.MAX_VALUE;
+
+        if (input.isEmpty()) {
+            return result;
+        }
+
+        try {
+            result = (int) Long.parseLong(input.replace("#", "").replace("0x", ""), 16);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

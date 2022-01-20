@@ -6,8 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "LightmapTextureManagerMixin",
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "LightmapTextureManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
