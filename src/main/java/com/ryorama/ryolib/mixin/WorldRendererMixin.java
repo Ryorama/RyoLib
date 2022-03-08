@@ -1,3 +1,4 @@
+/*
 package com.ryorama.ryolib.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -28,3 +29,4 @@ public abstract class WorldRendererMixin {
         RenderSystem.setShaderColor(glColor.getX(), glColor.getY(), glColor.getZ(), 1.0F - this.world.getRainGradient(partialTicks));
     }
 }
+*/

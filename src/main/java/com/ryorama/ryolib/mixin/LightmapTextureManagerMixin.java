@@ -1,3 +1,4 @@
+/*
 package com.ryorama.ryolib.mixin;
 
 import com.ryorama.ryolib.core.client.world.ModifyWorldColor;
@@ -28,3 +29,4 @@ public abstract class LightmapTextureManagerMixin {
 
     }
 }
+ */
