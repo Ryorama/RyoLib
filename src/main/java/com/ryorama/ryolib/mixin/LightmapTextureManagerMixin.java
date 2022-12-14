@@ -1,4 +1,3 @@
-/*
 package com.ryorama.ryolib.mixin;
 
 import com.ryorama.ryolib.core.client.world.ModifyWorldColor;
@@ -17,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public abstract class LightmapTextureManagerMixin {
 
     @Inject(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3f;lerp(Lnet/minecraft/util/math/Vec3f;F)V", ordinal = 0), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
-    public void update(float delta, CallbackInfo ci, ClientWorld clientworld, float f, float f1, float f2, Vec3f skyVector) {
+    public void update(float delta, CallbackInfo ci, ClientWorld clientWorld, float f, float g, float h, float i, float j, float l, float k, Vec3f skyVector) {
 
         ColorSettings colorSettings = new ColorSettings(ModifyWorldColor.skyLightHexColor, ModifyWorldColor.skyLightBlendStrength, ModifyWorldColor.moonTextureHexColor, ModifyWorldColor.moonTextureBlendStrength);
         ModifyWorldColor.lastColorSettings = new ColorSettings("", 0, "", 0);
@@ -26,7 +25,5 @@ public abstract class LightmapTextureManagerMixin {
 
         targetColor.lerp(colorSettings.getGLSkyLightColor(), 1.0f);
         skyVector.lerp(targetColor, (float) MathHelper.lerp(1.0f, ModifyWorldColor.lastColorSettings.getSkyLightBlendStrength(), colorSettings.getSkyLightBlendStrength()));
-
     }
 }
- */
