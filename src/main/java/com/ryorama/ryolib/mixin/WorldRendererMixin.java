@@ -1,3 +1,4 @@
+/*
 package com.ryorama.ryolib.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -21,13 +22,13 @@ import javax.annotation.Nullable;
 public abstract class WorldRendererMixin {
 
     @Shadow
-    @Nullable
     private ClientWorld world;
 
     @Inject(method = "renderSky", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/LunarWorldView;getMoonPhase()I"))
-    private void renderSky(MatrixStack stack, Matrix4f matrix, float tickDelta, Camera camera, boolean bl, Runnable runnable, CallbackInfo ci) {
+    public void renderSky(MatrixStack stack, Matrix4f matrix, float tickDelta, Camera camera, boolean bl, Runnable runnable, CallbackInfo ci) {
         Vec3f glColor = ColorUtil.glColor(ColorUtil.unpack(ColorSettings.tryParseColor(ModifyWorldColor.moonTextureHexColor)));
 
         RenderSystem.setShaderColor(glColor.getX(), glColor.getY(), glColor.getZ(), 1.0F - this.world.getRainGradient(tickDelta));
     }
 }
+*/
